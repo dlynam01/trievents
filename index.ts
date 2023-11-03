@@ -7,8 +7,6 @@ const app = express();
 const api = Router();
 
 api.get("/hello", (req, res) => {
-  await data.set("foo", "bar");
-  const results = await data.get("foo");
   return res.status(200).send({ message: "Hello from the public api!" });
 });
 
