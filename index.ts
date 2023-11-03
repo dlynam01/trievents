@@ -23,6 +23,41 @@ api.get("/greet/:name", (req, res) => {
   return res.status(200).send({ message: `Hello ${name}!` });
 });
 
+api.get("/registrations", async (req, res) => {
+  const regs = [
+    {
+      id: "d9465be0-9716-4a28-85c8-1145dcf35726",
+      name: "Tuesday Swim Lane",
+      openDate: "2023-11-01",
+      openTime: "20:30",
+      closeDate: "2023-12-01",
+      closeTime: "00:00",
+      numberSessions: 10
+    },
+    
+    {
+      id: "d9465be0-9716-4a28-85c8-1145dcf35726",
+      name: "Tuesday Swim Lane",
+      openDate: "2023-11-01",
+      openTime: "20:30",
+      closeDate: "2023-12-01",
+      closeTime: "00:00",
+      numberSessions: 10
+    },
+    
+    {
+      id: "d9465be0-9716-4a28-85c8-1145dcf35726",
+      name: "Tuesday Swim Lane",
+      openDate: "2023-11-01",
+      openTime: "20:30",
+      closeDate: "2023-12-01",
+      closeTime: "00:00",
+      numberSessions: 10
+    }
+  ] 
+  return res.status(200).send({regs})
+});
+
 api.post("/submit", async (req, res) => {
   return res.status(200).send({
     body: req.body,
