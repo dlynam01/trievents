@@ -6,12 +6,32 @@
     <title>Bootstrap Navbar Menu</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS for the color theme -->
+    <style>
+        body {
+            background-color: #174378; /* Dark Blue */
+            color: #FFFFFF; /* White */
+        }
+
+        .navbar {
+            background-color: #2380D7; /* Lighter Blue */
+        }
+
+        .navbar-nav .nav-link {
+            color: #FFFFFF; /* White */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #CCE0FF; /* Lighter Blue on hover */
+        }
+    </style>
 </head>
 <body>
     <!-- Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
+            <!-- Replace 'your-logo-image-url' with the actual image URL for your logo -->
+            <a class="navbar-brand" href="#"><img src="your-logo-image-url" alt="Your Logo" style="max-width: 150px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,7 +43,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">News</a>
                     </li>
-                    <li class="nav-item">
+                    <li class "nav-item">
                         <a class="nav-link" href="#">Registrations</a>
                     </li>
                     <li class="nav-item">
