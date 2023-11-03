@@ -24,6 +24,21 @@
         .navbar-nav .nav-link:hover {
             color: #CCE0FF; /* Lighter Blue on hover */
         }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+    
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+    
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
     </style>
 </head>
 <body>
@@ -54,10 +69,53 @@
         </div>
     </nav>
 
+
+    <div id="registrations"></div>
+
     <!-- Add your content here -->
 
     <!-- Add Bootstrap JS and jQuery links (required for the navbar toggle) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // AJAX request to fetch registration data
+    $.ajax({
+      url: '/api/registrations',
+      method: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        if (data.length > 0) {
+          // Build the HTML for displaying registration data
+          var registrationsHTML = '<table>';
+          registrationsHTML += '<tr><th>ID</th><th>Name</th><th>Open Date</th><th>Open Time</th><th>Close Date</th><th>Close Time</th></tr>';
+
+          data.forEach(function(registration) {
+            registrationsHTML += '<tr>';
+            registrationsHTML += '<td>' + registration.id + '</td>';
+            registrationsHTML += '<td>' + registration.name + '</td>';
+            registrationsHTML += '<td>' + registration.openDate + '</td>';
+            registrationsHTML += '<td>' + registration.openTime + '</td>';
+            registrationsHTML += '<td>' + registration.closeDate + '</td>';
+            registrationsHTML += '<td>' + registration.closeTime + '</td>';
+            registrationsHTML += '</tr>';
+          });
+
+          registrationsHTML += '</table>';
+
+          // Display the registration data in the 'registrations' element
+          $('#registrations').html(registrationsHTML);
+        } else {
+          $('#registrations').html('No registrations found.');
+        }
+      },
+      error: function() {
+        $('#registrations').html('Failed to load registrations.');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
