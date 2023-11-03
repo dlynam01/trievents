@@ -55,7 +55,7 @@ api.get("/registrations", async (req, res) => {
       numberSessions: 10
     }
   ] 
-  return res.status(200).send({regs})
+  return res.status(200).send(regs)
 });
 
 api.post("/submit", async (req, res) => {
