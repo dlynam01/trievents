@@ -89,7 +89,7 @@
         if (data.length > 0) {
           // Build the HTML for displaying registration data
           var registrationsHTML = '<table>';
-          registrationsHTML += '<tr><th>ID</th><th>Name</th><th>Open Date</th><th>Open Time</th><th>Close Date</th><th>Close Time</th></tr>';
+          registrationsHTML += '<tr><th>ID</th><th>Name</th><th>Open Date</th><th>Open Time</th><th>Close Date</th><th>Close Time</th><th>Cost</th></tr>';
 
           data.forEach(function(registration) {
             registrationsHTML += '<tr>';
@@ -99,6 +99,7 @@
             registrationsHTML += '<td>' + registration.openTime + '</td>';
             registrationsHTML += '<td>' + registration.closeDate + '</td>';
             registrationsHTML += '<td>' + registration.closeTime + '</td>';
+            registrationsHTML += '<td>' + (registration.numberSessions * 5) + '</td>';
             registrationsHTML += '</tr>';
           });
 
